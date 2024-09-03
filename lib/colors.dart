@@ -24,6 +24,9 @@ class AppColors {
   static const recombg2 = Color(0xFFFEDEA5);
   static const meditatebg = Color(0xFFA0A3B1);
   static const meditateadbg = Color(0xFFF1DDCF);
+  static const audiobg = Color(0xFFFAF7F2);
+  static const iconbg = Color(0xFFB6B8BF);
+  static const darkbg = Color(0xFF03174C);
 
-  
+  static const nightlifebg = Color(0xFF4C53B4);
 }

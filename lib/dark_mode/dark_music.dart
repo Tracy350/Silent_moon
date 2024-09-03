@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
 
-class Music extends StatelessWidget {
-  const Music({super.key});
+class DarkMusic extends StatelessWidget {
+  const DarkMusic({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.audiobg,
+      backgroundColor: AppColors.darkbg,
       body: Column(
         children: [
           Container(
@@ -23,7 +23,7 @@ class Music extends StatelessWidget {
                     child: Transform.rotate(
                         angle: -56.5,
                         child: Image.asset(
-                          'assets/audio/bottom_left.png',
+                          'assets/dark_audio_assets/dark_bottomleft.png',
                         ))),
                 Positioned(
                     bottom: -50,
@@ -31,20 +31,14 @@ class Music extends StatelessWidget {
                     child: Transform.rotate(
                         angle: -56.5,
                         child: Image.asset(
-                          'assets/audio/bottom_right.png',
-                        ))),
-                Positioned(
-                    child: Transform.rotate(
-                        angle: -56.5,
-                        child: Image.asset(
-                          'assets/audio/top_left.png',
+                          'assets/dark_audio_assets/dark_bottomright.png',
                         ))),
                 Positioned(
                     right: 0,
                     child: Transform.rotate(
                         angle: -56.5,
                         child: Image.asset(
-                          'assets/audio/top_right.png',
+                          'assets/dark_audio_assets/dark_topright.png',
                         ))),
                 Padding(
                   padding:
@@ -109,7 +103,9 @@ class Music extends StatelessWidget {
                     children: [
                       Text('Focus Attention',
                           style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w800, fontSize: 30)),
+                              fontWeight: FontWeight.w800,
+                              fontSize: 30,
+                              color: Colors.white)),
                       Text(
                         '7 DAYS OF CALM',
                         style: GoogleFonts.montserrat(color: AppColors.subtext),
@@ -126,28 +122,36 @@ class Music extends StatelessWidget {
                   child: Row(
                     children: [
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.fast_rewind)),
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.fast_rewind,
+                            color: Colors.white,
+                          )),
                       Container(
                           height: 70,
                           width: 70,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(70),
-                              color: AppColors.fontcolor),
+                              color: Colors.white),
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
                                 Icons.pause,
-                                color: Colors.white,
+                                color: AppColors.fontcolor,
                               ))),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.fast_forward)),
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.fast_forward,
+                            color: Colors.white,
+                          )),
                     ],
                   ),
                 ),
                 const Align(
                   alignment: Alignment(0, 0.5),
                   child: Divider(
-                    color: Colors.black, // Set the color of the line
+                    color: Colors.white, // Set the color of the line
                     thickness: 2, // Set the thickness of the line
                     indent:
                         30, // Optional: Add indentation to the start of the line
@@ -164,13 +168,13 @@ class Music extends StatelessWidget {
                         Text(
                           '01:30',
                           style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w500, color: Colors.white),
                         ),
                         const Spacer(),
                         Text(
                           '30:30',
                           style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w500, color: Colors.white),
                         )
                       ],
                     ),

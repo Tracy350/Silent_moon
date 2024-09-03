@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: AppColors.buttoncolor,
       body: Column(
         children: [
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: MyButton(
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                 height: 50,
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ChooseTopic()));
+                      MaterialPageRoute(builder: (context) => const ChooseTopic()));
                 }),
           ),
         ],

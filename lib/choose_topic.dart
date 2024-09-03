@@ -22,21 +22,21 @@ class ChooseTopic extends StatelessWidget {
                 'What brings you',
                 style: GoogleFonts.montserrat(
                   textStyle:
-                      TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
+                      const TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
                 ),
               ),
             ),
             Text(
               'to Silent Moon?',
-              style: GoogleFonts.montserrat(textStyle: TextStyle(fontSize: 25)),
+              style: GoogleFonts.montserrat(textStyle: const TextStyle(fontSize: 25)),
             ),
             Text(
               'Choose a topic to focus on',
               style: GoogleFonts.montserrat(
-                textStyle: TextStyle(color: AppColors.subtext, fontSize: 20),
+                textStyle: const TextStyle(color: AppColors.subtext, fontSize: 20),
               ),
             ),
-            SizedBox(height: 20), // Added spacing
+            const SizedBox(height: 20), // Added spacing
             Expanded(
               child: GridView.custom(
                 gridDelegate: SliverWovenGridDelegate.count(
@@ -44,8 +44,8 @@ class ChooseTopic extends StatelessWidget {
                   mainAxisSpacing: 0,
                   crossAxisSpacing: 10,
                   pattern: [
-                    WovenGridTile(1),
-                    WovenGridTile(6 / 7, crossAxisRatio: 1),
+                    const WovenGridTile(1),
+                    const WovenGridTile(6 / 7, crossAxisRatio: 1),
                   ],
                 ),
                 childrenDelegate: SliverChildBuilderDelegate(
@@ -55,10 +55,10 @@ class ChooseTopic extends StatelessWidget {
                   childCount: 8, // Number of tiles
                 ),
                 shrinkWrap: true,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             MyButton(
@@ -68,9 +68,9 @@ class ChooseTopic extends StatelessWidget {
                 height: 50,
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Reminders()));
+                      MaterialPageRoute(builder: (context) => const Reminders()));
                 }),
-            SizedBox(
+            const SizedBox(
               height: 10,
             )
           ],
@@ -111,10 +111,10 @@ class CustomTile extends StatelessWidget {
     ];
 
     final textStyles = [
-      TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
-      TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
-      TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
-      TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
+      const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
+      const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
+      const TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
+      const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
       TextStyle(
           color: Colors.yellow[300], fontSize: 20, fontWeight: FontWeight.w700),
     ];

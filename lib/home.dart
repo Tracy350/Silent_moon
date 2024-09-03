@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
+import 'package:silent_moon/coursedetails.dart';
 import 'package:silent_moon/meditate.dart';
 import 'package:silent_moon/music.dart';
 import 'package:silent_moon/mybutton.dart';
@@ -16,7 +17,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+void _nxtpage(){
+  setState(() {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const Coursedetails()));
 
+  });
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,19 +41,19 @@ class _HomeState extends State<Home> {
                   'Good Morning, Afsar',
                   style: GoogleFonts.montserrat(
                     textStyle:
-                        TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
+                        const TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
                   ),
                 ),
                 Text(
                   'We wish you have a good day',
                   style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                         fontWeight: FontWeight.w300,
                         fontSize: 20,
                         color: AppColors.subtext),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -94,7 +101,7 @@ class _HomeState extends State<Home> {
                                   style: GoogleFonts.montserrat(
                                       color: AppColors.basicstxt),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 Container(
@@ -122,7 +129,7 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Container(
@@ -168,7 +175,7 @@ class _HomeState extends State<Home> {
                                   style: GoogleFonts.montserrat(
                                       color: AppColors.fontcolor),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 Container(
@@ -198,7 +205,7 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -244,7 +251,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.white),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.play_arrow_rounded,
                                   size: 30,
                                 )),
@@ -252,7 +259,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Text(
@@ -260,7 +267,7 @@ class _HomeState extends State<Home> {
                   style: GoogleFonts.montserrat(
                       fontSize: 25, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SingleChildScrollView(
@@ -270,21 +277,24 @@ class _HomeState extends State<Home> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                              height: 130,
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              decoration: BoxDecoration(
-                                  color: AppColors.recombg1,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    right: 0,
-                                    child: Image.asset(
-                                        'assets/home/recommended1.png'),
-                                  )
-                                ],
-                              )),
+                          GestureDetector(
+                            onTap: _nxtpage,
+                            child: Container(
+                                height: 130,
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                decoration: BoxDecoration(
+                                    color: AppColors.recombg1,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      right: 0,
+                                      child: Image.asset(
+                                          'assets/home/recommended1.png'),
+                                    )
+                                  ],
+                                )),
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 10.0,
@@ -302,7 +312,7 @@ class _HomeState extends State<Home> {
                                   fontSize: 15))
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Column(
@@ -340,7 +350,7 @@ class _HomeState extends State<Home> {
                                   fontSize: 15))
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Column(

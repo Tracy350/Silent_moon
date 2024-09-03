@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon/coursedetails.dart';
+import 'package:silent_moon/dark_mode/dark_music.dart';
+import 'package:silent_moon/dark_mode/night_island.dart';
+import 'package:silent_moon/dark_mode/sleep_dark.dart';
+import 'package:silent_moon/dark_mode/sleep_music.dart';
+import 'package:silent_moon/dark_mode/welcome_dark.dart';
+import 'package:silent_moon/meditate.dart';
+import 'package:silent_moon/music.dart';
 import 'package:silent_moon/welcome_screen.dart';
 import 'package:silent_moon/signin.dart';
 
@@ -34,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: WelcomeScreen(),
+      home: Coursedetails(),
     );
   }
 }

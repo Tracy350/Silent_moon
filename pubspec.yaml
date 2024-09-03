@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   flutter_staggered_grid_view: ^0.7.0
+  
+  flutter_svg: ^2.0.10+1
+  flexible_grid_view: ^0.0.2
  
 
 dev_dependencies:
@@ -87,8 +90,27 @@ flutter:
     - assets/Meditate/meditate4.png
     - assets/Meditate/meditate5.png
     - assets/Meditate/meditatead.png
-   
-
+    - assets/audio/bottom_left.png
+    - assets/audio/bottom_right.png
+    - assets/audio/top_left.png
+    - assets/audio/top_right.png
+    - assets/welcome_dark_img/welcomedark.svg
+    - assets/sleep_dark_assets/oceanmoon.png
+    - assets/sleep_dark_assets/sleep_clouds.png
+    - assets/sleep_dark_assets/sleep_moon.png
+    - assets/sleep_dark_assets/dark_grid3.png
+    - assets/sleep_dark_assets/dark_grid4.png
+    - assets/sleep_dark_assets/night_island.png
+    - assets/sleep_dark_assets/sweet_sleep.png
+    - assets/sleep_dark_assets/night_island_bg.png
+    - assets/dark_audio_assets/dark_bottomleft.png
+    - assets/dark_audio_assets/dark_topright.png
+    - assets/dark_audio_assets/dark_bottomright.png
+    - assets/audio/top_left.png
+    - assets/audio/top_right.png
+    - assets/course_details/sunny.png
+    - assets/Meditate/anxiety.png
+    - assets/Meditate/calmn.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

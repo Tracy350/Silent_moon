@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
 
@@ -10,7 +11,7 @@ class Meditate extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 70,
           ),
           Text(
@@ -27,7 +28,7 @@ class Meditate extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
@@ -118,7 +119,7 @@ class Meditate extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
@@ -165,7 +166,7 @@ class Meditate extends StatelessWidget {
                             color: Colors.white),
                         child: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.play_arrow_rounded,
                               size: 30,
                             )),
@@ -174,8 +175,96 @@ class Meditate extends StatelessWidget {
               ),
             ),
           ),
+          Expanded(
+            child: GridView.custom(
+              gridDelegate: SliverWovenGridDelegate.count(
+                crossAxisCount: 2,
+                mainAxisSpacing: 0,
+                crossAxisSpacing: 10,
+                pattern: [
+                  const WovenGridTile(1),
+                  const WovenGridTile(6 / 7, crossAxisRatio: 1),
+                ],
+              ),
+              childrenDelegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return MeditateTile(index: index);
+                },
+                childCount: 6, // Number of tiles
+              ),
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+            ),
+          ),
         ],
       ),
+    );
+  }
+}
+
+class MeditateTile extends StatelessWidget {
+  final int index;
+
+  const MeditateTile({Key? key, required this.index}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Different background colors for demonstration
+
+    final images = [
+      'assets/Meditate/calmn.png',
+      'assets/Meditate/anxiety.png',
+      'assets/Meditate/calmn.png',
+      'assets/Meditate/anxiety.png',
+    ];
+
+    final textStyles = [
+      const TextStyle(
+          color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
+      const TextStyle(
+          color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
+    ];
+
+    final texts = [
+      "7 days of Calm",
+      "Anxiety Release",
+      "7 days of Calm",
+      "Reduce Anxiety",
+    ];
+
+    // Get color based on index
+    final image = images[index % images.length];
+    final textStyle = textStyles[index % textStyles.length];
+    final text = texts[index % texts.length];
+
+    return Stack(
+      children: [
+        // Background Container
+        Padding(
+          padding: const EdgeInsets.only(right: 10.0, left: 20),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(
+                image: AssetImage(image),
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+        // Positioned text
+        Positioned(
+          bottom: 30,
+          left: 10,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Text(
+              text,
+              style: textStyle,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

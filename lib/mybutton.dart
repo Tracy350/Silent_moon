@@ -10,11 +10,13 @@ class MyButton extends StatelessWidget {
   final Color color;
   final void Function()? onPressed;
   final TextStyle? textStyle;
+  final IconData? icon;
 
   const MyButton({
     super.key,
     this.textStyle,
     this.imagePath,
+    this.icon,
     required this.color,
     required this.text,
     required this.width,
@@ -35,15 +37,13 @@ class MyButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (imagePath != null)
+            if (icon != null) Icon(icon),
+            if (imagePath != null && icon == null)
               Image.asset(
                 imagePath!,
                 height: 20,
               ),
-            if (imagePath != null)
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.1,
-              ),
+            const SizedBox(width: 20),
             Text(
               text,
               style: textStyle ??

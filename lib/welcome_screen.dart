@@ -41,13 +41,14 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               Text('We are what we do',
                   style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                           fontSize: 30, fontWeight: FontWeight.w800))),
               Text(
                 textAlign: TextAlign.center,
                 'Thousand of people are usign silent moon \n for smalls meditation ',
                 style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(color: AppColors.subtext, fontSize: 18),
+                  textStyle:
+                      const TextStyle(color: AppColors.subtext, fontSize: 18),
                 ),
               ),
               SizedBox(
@@ -60,7 +61,7 @@ class WelcomeScreen extends StatelessWidget {
                     text: 'SIGN UP',
                     textStyle: GoogleFonts.montserrat(
                       textStyle: const TextStyle(
-                        color: AppColors.buttontxt, 
+                        color: AppColors.buttontxt,
                         fontSize: 15,
                       ),
                     ),
@@ -80,13 +81,13 @@ class WelcomeScreen extends StatelessWidget {
                   Text(
                     'ALREADY HAVE AN ACCOUNT',
                     style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: AppColors.subtext, fontSize: 15)),
+                        textStyle: const TextStyle(
+                            color: AppColors.subtext, fontSize: 15)),
                   ),
                   TextButton(
                     child: Text('LOGIN',
                         style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 color: AppColors.buttoncolor, fontSize: 15))),
                     onPressed: () {},
                   ),

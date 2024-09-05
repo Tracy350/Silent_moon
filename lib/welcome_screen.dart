@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
 import 'package:silent_moon/mybutton.dart';
 import 'package:silent_moon/signin.dart';
+import 'package:silent_moon/signup.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -69,7 +70,7 @@ class WelcomeScreen extends StatelessWidget {
                     height: 50,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignIn()));
+                          MaterialPageRoute(builder: (context) => SignUp()));
                     }),
               ),
               SizedBox(
@@ -89,7 +90,10 @@ class WelcomeScreen extends StatelessWidget {
                         style: GoogleFonts.montserrat(
                             textStyle: const TextStyle(
                                 color: AppColors.buttoncolor, fontSize: 15))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SignIn()));
+                    },
                   ),
                 ],
               )

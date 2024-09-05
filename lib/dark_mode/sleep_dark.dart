@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
 import 'package:silent_moon/dark_mode/night_island.dart';
-import 'package:silent_moon/mybutton.dart';
 
 class SleepDark extends StatefulWidget {
   const SleepDark({super.key});
@@ -12,13 +11,6 @@ class SleepDark extends StatefulWidget {
 }
 
 class _SleepDarkState extends State<SleepDark> {
-  void _navigation() {
-    setState(() {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const NightIsland()));
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,7 +157,13 @@ class _SleepDarkState extends State<SleepDark> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           GestureDetector(
-                            onTap: _navigation,
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const NightIsland()));
+                            },
                             child: Container(
                               height: 150,
                               width: 170,

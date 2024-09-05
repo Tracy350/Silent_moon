@@ -38,7 +38,12 @@ class NightIsland extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                           color: Colors.white),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                         
+                          Navigator.pop(
+                            context,
+                          );
+                        },
                         icon: const Icon(
                           Icons.close,
                           color: Colors.black,

@@ -17,13 +17,18 @@ class SleepMusic extends StatelessWidget {
               padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20),
               child: Row(
                 children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Icon(Icons.arrow_back),
+                  GestureDetector(
+                    onTap:  (){
+                     Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Icon(Icons.arrow_back),
+                    ),
                   ),
                   Spacer(),
                   Text(

@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
 
 class Tabcontent extends StatelessWidget {
-  const Tabcontent({super.key});
+   Tabcontent({super.key});
+
+    final FlutterTts flutterTts = FlutterTts();
+
+  speakwithmasc(String text) async {
+    await flutterTts.setLanguage('en-US');
+    await flutterTts.setPitch(0.5);
+    await flutterTts.speak(text);
+  }
+    speakwithfem(String text) async {
+    await flutterTts.setLanguage('en-US');
+    await flutterTts.setPitch(1);
+    await flutterTts.speak(text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +49,16 @@ class Tabcontent extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Focus Attention',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 20, fontWeight: FontWeight.w700),
+                    GestureDetector(
+                      onTap: () {
+                                                speakwithmasc('Focus Attention');
+
+                      },
+                      child: Text(
+                        'Focus Attention',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.w700),
+                      ),
                     ),
                     Text(
                       '10 MINS',
@@ -76,10 +96,15 @@ class Tabcontent extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Focus Attention',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 20, fontWeight: FontWeight.w700),
+                    GestureDetector(
+                      onTap: (){
+                        speakwithfem('Focus Attention');
+                      },
+                      child: Text(
+                        'Focus Attention',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.w700),
+                      ),
                     ),
                     Text(
                       '10 MINS',
@@ -117,10 +142,15 @@ class Tabcontent extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Focus Attention',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 20, fontWeight: FontWeight.w700),
+                    GestureDetector(
+                      onTap: (){
+                        speakwithfem('Focus Attention');
+                      },
+                      child: Text(
+                        'Focus Attention',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.w700),
+                      ),
                     ),
                     Text(
                       '10 MINS',

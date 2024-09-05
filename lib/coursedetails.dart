@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
 import 'package:silent_moon/mybutton.dart';
 import 'package:silent_moon/tabcontent.dart';
 
 class Coursedetails extends StatelessWidget {
-  const Coursedetails({super.key});
+   Coursedetails({super.key});
+    final FlutterTts flutterTts = FlutterTts();
+
+  speak(String text) async {
+    await flutterTts.setLanguage('en-UK');
+    await flutterTts.setPitch(1);
+    await flutterTts.speak(text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +40,23 @@ class Coursedetails extends StatelessWidget {
                       const EdgeInsets.only(left: 20.0, top: 50, right: 20),
                   child: Row(
                     children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.close,
-                            color: Colors.black,
-                            size: 30,
+                      GestureDetector(
+                        onTap: (){
+                            Navigator.pop(context);
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.white),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.close,
+                              color: Colors.black,
+                              size: 30,
+                            ),
                           ),
                         ),
                       ),
@@ -156,11 +169,11 @@ class Coursedetails extends StatelessWidget {
                     fontSize: 30),
               ),
             ),
-            const DefaultTabController(
+             DefaultTabController(
               length: 2,
               child: Column(
                 children: [
-                  TabBar(
+                  const TabBar(
                     tabs: [
                       Tab(
                         text: 'MALE VOICE',

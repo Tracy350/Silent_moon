@@ -51,22 +51,6 @@ class Music extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.white,
-                      ),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.close,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                      ),
-                    ),
                     const Spacer(),
                     Container(
                       height: 50,

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
-import 'package:silent_moon/dark_mode/sleep_dark.dart';
+import 'package:silent_moon/dark_mode/navigation_dark.dart';
 import 'package:silent_moon/mybutton.dart';
 
 class WelcomeDark extends StatelessWidget {
@@ -46,17 +45,22 @@ class WelcomeDark extends StatelessWidget {
                             fontSize: 15, color: Colors.white),
                       )),
                   Positioned(
-                      bottom: 0,
-                      child: MyButton(
-                          color: AppColors.buttoncolor,
-                          text: 'GET STARTED',
-                          width: MediaQuery.of(context).size.width,
-                          height: 50,
-                          onPressed: () {
-                                              Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const SleepDark()));
-
-                          })),
+                      bottom: 20,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: MyButton(
+                            color: AppColors.buttoncolor,
+                            text: 'GET STARTED',
+                            width: MediaQuery.of(context).size.width,
+                            height: 50,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const NavBarDark()));
+                            }),
+                      )),
                 ],
               )),
         ],

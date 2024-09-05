@@ -9,24 +9,19 @@ import 'package:silent_moon/navigation_menu.dart';
 import 'package:silent_moon/profile.dart';
 import 'package:silent_moon/sleep.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeDark extends StatefulWidget {
+  const HomeDark({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeDark> createState() => _HomeDarkState();
 }
 
-class _HomeState extends State<Home> {
-void _nxtpage(){
-  setState(() {
-          Navigator.push(context,
-          MaterialPageRoute(builder: (context) =>  Coursedetails()));
+class _HomeDarkState extends State<HomeDark> {
 
-  });
-}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.darkbg,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -278,7 +273,10 @@ void _nxtpage(){
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           GestureDetector(
-                            onTap: _nxtpage,
+                            onTap: (){
+                               Navigator.push(context,
+          MaterialPageRoute(builder: (context) =>  Coursedetails()));
+                            },
                             child: Container(
                                 height: 130,
                                 width: MediaQuery.of(context).size.width * 0.4,

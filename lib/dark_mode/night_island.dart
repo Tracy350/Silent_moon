@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
-import 'package:silent_moon/dark_mode/dark_music.dart';
 import 'package:silent_moon/mybutton.dart';
+import 'package:silent_moon/youtube_player.dart';
 
 class NightIsland extends StatelessWidget {
   const NightIsland({super.key});
@@ -39,7 +39,6 @@ class NightIsland extends StatelessWidget {
                           color: Colors.white),
                       child: IconButton(
                         onPressed: () {
-                         
                           Navigator.pop(
                             context,
                           );
@@ -272,10 +271,8 @@ class NightIsland extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 30,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DarkMusic()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => YoutubeWidget()));
                 }),
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon/dark_mode/dark_splashscreem.dart';
 import 'package:silent_moon/splashscreen.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Splashscreen(),
+      home: DarkSplashscreen(),
     );
   }
 }

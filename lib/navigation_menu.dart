@@ -20,7 +20,7 @@ class _NavBarState extends State<NavBar> {
     const Sleep(),
     const Meditate(),
     const Music(),
-    const Profile()
+     Profile()
   ];
   @override
   Widget build(BuildContext context) {

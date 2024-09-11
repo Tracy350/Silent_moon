@@ -3,8 +3,8 @@ import 'package:silent_moon/colors.dart';
 import 'package:silent_moon/dark_mode/dark_music.dart';
 import 'package:silent_moon/dark_mode/dark_profile.dart';
 import 'package:silent_moon/dark_mode/home_dark.dart';
+import 'package:silent_moon/dark_mode/meditate_dark.dart';
 import 'package:silent_moon/dark_mode/sleep_dark.dart';
-import 'package:silent_moon/dark_mode/sleep_music.dart';
 
 class NavBarDark extends StatefulWidget {
   const NavBarDark({super.key});
@@ -18,9 +18,9 @@ class _NavBarState extends State<NavBarDark> {
   List<Widget> widgetList = [
     const HomeDark(),
     const SleepDark(),
-    const SleepMusic(),
+    const MeditateDark(),
     const DarkMusic(),
-    const DarkProfile()
+    DarkProfile()
   ];
   @override
   Widget build(BuildContext context) {

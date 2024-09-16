@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon/colors.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class YoutubeWidget extends StatefulWidget {
-  const YoutubeWidget({super.key});
+class YoutubeWidgetDark extends StatefulWidget {
+  const YoutubeWidgetDark({super.key});
 
   @override
-  State<YoutubeWidget> createState() => _YoutubeWidgetState();
+  State<YoutubeWidgetDark> createState() => _YoutubeWidgetDarkState();
 }
 
-class _YoutubeWidgetState extends State<YoutubeWidget> {
+class _YoutubeWidgetDarkState extends State<YoutubeWidgetDark> {
   final videoURL =
       'https://www.youtube.com/watch?v=YRJ6xoiRcpQ&pp=ygUQbWVkaXRhdGlvbiBtdXNpYw%3D%3D';
   late YoutubePlayerController _controller;
@@ -26,6 +27,7 @@ class _YoutubeWidgetState extends State<YoutubeWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.darkbg,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +43,10 @@ class _YoutubeWidgetState extends State<YoutubeWidget> {
                 children: [
                   Text(
                     'Medititation Music',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white),
                   ),
                   Text(
                     '9,232,342 views',
@@ -126,7 +131,7 @@ class _YoutubeWidgetState extends State<YoutubeWidget> {
                                 'Comment',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.black),
+                                    color: Colors.white),
                               ),
                             ],
                           ),
@@ -151,8 +156,10 @@ class _YoutubeWidgetState extends State<YoutubeWidget> {
                     height: 20,
                   ),
                   Text('More Videos',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 25)),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25,
+                          color: Colors.white)),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -167,11 +174,13 @@ class _YoutubeWidgetState extends State<YoutubeWidget> {
                       Text(
                         '7 minute meditation to start your day',
                         style: TextStyle(
-                            fontWeight: FontWeight.w700, fontSize: 20),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
+                            color: Colors.white),
                       ),
                       Text(
                         'Melvina Appiah',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 15, color: Colors.white),
                       )
                     ],
                   ),
@@ -192,11 +201,13 @@ class _YoutubeWidgetState extends State<YoutubeWidget> {
                       Text(
                         '7 minute meditation to start your day',
                         style: TextStyle(
-                            fontWeight: FontWeight.w700, fontSize: 20),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
+                            color: Colors.white),
                       ),
                       Text(
                         'Melvina Appiah',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 15, color: Colors.white),
                       )
                     ],
                   )

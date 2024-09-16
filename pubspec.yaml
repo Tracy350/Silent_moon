@@ -123,6 +123,7 @@ flutter:
     - assets/audio_cover/cover_art4.png
     - assets/audio_cover/cover_art5.png
     - assets/audio_cover/cover_art6.png
+    - assets/youtubeimg/meditationimg.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

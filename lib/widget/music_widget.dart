@@ -55,3 +55,4 @@ class MusicWidget extends StatelessWidget {
     );
   }
 }
+

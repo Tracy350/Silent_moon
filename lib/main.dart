@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon/youtube_player.dart';
+import 'package:silent_moon/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,9 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: YoutubeWidget(
-        
-      ),
+      home: Splashscreen(),
     );
   }
 }

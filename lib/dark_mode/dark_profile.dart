@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
-import 'package:silent_moon/mybutton.dart';
-import 'package:silent_moon/mytextfield.dart';
+import 'package:silent_moon/widget/dark_profile_widget.dart';
 
 class DarkProfile extends StatelessWidget {
-  final TextEditingController _emailaddress = TextEditingController();
-  final TextEditingController _fname = TextEditingController();
-  final TextEditingController _lname = TextEditingController();
-
-  final TextEditingController _phonenumber = TextEditingController();
-
   DarkProfile({super.key});
 
   @override
@@ -22,17 +15,6 @@ class DarkProfile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20.0, top: 30),
-              child: GestureDetector(
-                onTap: () {},
-                child: const Icon(
-                  Icons.logout,
-                  color: Colors.red,
-                  size: 35,
-                ),
-              ),
-            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
@@ -41,7 +23,7 @@ class DarkProfile extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundColor: AppColors.buttoncolor,
                         radius: 90,
                       ),
@@ -58,7 +40,7 @@ class DarkProfile extends StatelessWidget {
                           ))
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text('Daniel Doe',
                       style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w800,
@@ -66,112 +48,54 @@ class DarkProfile extends StatelessWidget {
                           color: Colors.white)),
                   Text('danieldoE@gmail.com',
                       style: GoogleFonts.montserrat(color: AppColors.subtext)),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: MyTextfield(
-                      controller: _emailaddress,
-                      containerDecoration: BoxDecoration(
-                        color: AppColors.textfieldcolor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      textFieldDecoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 15.0),
-                        border: InputBorder.none,
-                        hintText: 'Email Addrress',
-                        hintStyle: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: AppColors.textfieldtxt),
-                        ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: GestureDetector(
+                      child: const DarkProfileWidget(
+                        icon: Icons.person,
+                        text: 'My Account',
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: MyTextfield(
-                      controller: _fname,
-                      containerDecoration: BoxDecoration(
-                        color: AppColors.textfieldcolor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      textFieldDecoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 15.0),
-                        border: InputBorder.none,
-                        hintText: 'First Name',
-                        hintStyle: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: AppColors.textfieldtxt),
-                        ),
-                      ),
+                  GestureDetector(
+                    child: const DarkProfileWidget(
+                      icon: Icons.notifications,
+                      text: 'Notification',
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: MyTextfield(
-                      controller: _lname,
-                      containerDecoration: BoxDecoration(
-                        color: AppColors.textfieldcolor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      textFieldDecoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 15.0),
-                        border: InputBorder.none,
-                        hintText: 'Last Name',
-                        hintStyle: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: AppColors.textfieldtxt),
-                        ),
-                      ),
+                  GestureDetector(
+                    child: const DarkProfileWidget(
+                      icon: Icons.settings,
+                      text: 'Settings',
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: MyTextfield(
-                      controller: _phonenumber,
-                      containerDecoration: BoxDecoration(
-                        color: AppColors.textfieldcolor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      textFieldDecoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 15.0),
-                        border: InputBorder.none,
-                        hintText: 'Password',
-                        hintStyle: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: AppColors.textfieldtxt),
-                        ),
-                      ),
+                  GestureDetector(
+                    child: const DarkProfileWidget(
+                      icon: Icons.help,
+                      text: 'Help Center',
                     ),
                   ),
-                  SizedBox(height: 100),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                    child: MyButton(
-                        color: AppColors.buttoncolor,
-                        text: 'Update',
-                        textStyle: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            fontSize: 20),
-                        width: 200,
-                        height: 70,
-                        onPressed: () {}),
-                  )
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    child: const DarkProfileWidget(
+                      icon: Icons.logout,
+                      text: 'Log out',
+                    ),
+                  ),
                 ],
               ),
             ),

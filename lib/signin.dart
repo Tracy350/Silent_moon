@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:silent_moon/colors.dart';
-import 'package:silent_moon/home.dart';
-import 'package:silent_moon/homepage.dart';
 import 'package:silent_moon/mybutton.dart';
 import 'package:silent_moon/mytextfield.dart';
 import 'package:silent_moon/navigation_menu.dart';
@@ -57,7 +55,7 @@ class SignIn extends StatelessWidget {
                 ),
                 Positioned(
                   top: 270,
-                  left: 20,
+                  left: 40,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: MyButton(

@@ -6,79 +6,75 @@ import 'package:silent_moon/mybutton.dart';
 import 'package:silent_moon/mytextfield.dart';
 import 'package:silent_moon/signin.dart';
 
-class SignUp extends StatelessWidget {
+class DarkSignUp extends StatelessWidget {
   final TextEditingController _emailaddress = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _name = TextEditingController();
 
-  SignUp({super.key});
+  DarkSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.darkbg,
+        title: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      ),
+      backgroundColor: AppColors.darkbg,
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              children: [
-                Image.asset('assets/signupbg.png'),
-                Positioned(
-                  bottom: 230,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'Welcome Back',
+              style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 38,
+                    color: Colors.white),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              child: MyButton(
+                color: AppColors.facebookbtn,
+                imagePath: 'assets/Vector.png',
+                text: 'CONTINUE WITH FACEBOOK',
+                textStyle: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                    color: AppColors.buttontxt,
+                    fontSize: 15,
                   ),
                 ),
-                Positioned(
-                  top: 150,
-                  right: 40,
-                  child: Text(
-                    'Welcome Back',
-                    style: GoogleFonts.montserrat(
-                      textStyle: const TextStyle(
-                          fontWeight: FontWeight.w800, fontSize: 38),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 270,
-                  left: 40,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: MyButton(
-                      color: AppColors.facebookbtn,
-                      imagePath: 'assets/Vector.png',
-                      text: 'CONTINUE WITH FACEBOOK',
-                      textStyle: GoogleFonts.montserrat(
-                        textStyle: const TextStyle(
-                          color: AppColors.buttontxt,
-                          fontSize: 15,
-                        ),
-                      ),
-                      width: 100,
-                      height: 50,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => SignIn()));
-                      },
-                    ),
-                  ),
-                )
-              ],
+                width: 100,
+                height: 50,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignIn()));
+                },
+              ),
             ),
             const SizedBox(height: 20),
             Padding(
@@ -124,7 +120,8 @@ class SignUp extends StatelessWidget {
                 ),
                 textFieldDecoration: InputDecoration(
                   suffixIcon: const Icon(Icons.check, color: Colors.green),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 15.0, horizontal: 10),
                   border: InputBorder.none,
                   hintText: 'Name',
                   hintStyle: GoogleFonts.montserrat(
@@ -145,7 +142,8 @@ class SignUp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 textFieldDecoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 15.0, horizontal: 10),
                   border: InputBorder.none,
                   hintText: 'Email address',
                   hintStyle: GoogleFonts.montserrat(
@@ -167,7 +165,8 @@ class SignUp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 textFieldDecoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 15.0, horizontal: 10),
                   border: InputBorder.none,
                   hintText: 'Password',
                   hintStyle: GoogleFonts.montserrat(
